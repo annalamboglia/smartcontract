@@ -23,4 +23,10 @@ contract MyContract {
         return myArray2;
     }
 
+    //se il tipo è external dobbiamo aggiungere calldata!
+    //function myFunc3(uint[] calldata _myArray) external
+    //se il tipo è internal dobbiamo aggiungere memory!
+    //function myFunc3(uint[] memory _myArray) external
+
+
 }

@@ -3,30 +3,17 @@ pragma solidity ^0.8.0;
 
 contract MyContract {
 
-    //Mapping - simiili ai dizionari
-    //key => value 
-    //mapping(address => uint) age;
-
-    //Create
-    //Read
-    //Update
-    //Delete
-
-    mapping(address => uint) public age;
-
-    function assignAge(uint _age) external {
-        age[msg.sender]=_age;
+   //Struct
+    struct Player {
+        string name;
+        uint goals;
     }
 
-    function getAge(address _sender) external view returns(uint){
-        return age[_sender];
+    Player[] public players;
+    function addPlayer(string calldata _name, uint _goals) external {
+        Player memory player = Player(_name,_goals);
+        players.push(player); 
     }
-
-    //Possono esserci anche dei nested mapping
-    //mapping(address => mapping(address => uint)) user;
-
-    //oppure array in mapping
-    //mapping(address => uint[]) goals;
 
 
 }
