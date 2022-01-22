@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract MyContract {
+
+  //Struct
+    struct Player {
+        string name;
+        uint goals;
+    }
+
+    Player[] public players;
+    function addPlayer(string calldata _name, uint _goals) external {
+        Player memory player = Player(_name,_goals);
+        players.push(player); 
+    }
+
+
+}
